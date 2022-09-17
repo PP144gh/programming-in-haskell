@@ -1,3 +1,5 @@
+-- starting by the last double 2 instead of the first
+
 double (double 2)
 = { applying the outer double }
 double 2 + double 2

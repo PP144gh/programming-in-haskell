@@ -1,5 +1,9 @@
--- compile ghc -o ex5 ex5.hs qsort_uniq.hs qsort.hs
--- run ./ex5
+qsort_uniq :: Ord a => [a] -> [a]
+qsort_uniq [] = []
+qsort_uniq (x:xs) = qsort_uniq smaller ++ [x] ++ qsort_uniq larger
+  where
+    smaller = [a | a <- xs, a < x]
+    larger = [b | b <- xs, b > x]
 
 
 
@@ -19,10 +23,3 @@ qsort_uniq [2,2,3,1,1]
 
 
 -}
-
-import Qsort_uniq
-import Qsort
-
-main = do
-  print (qsort [2,2,3,1,1])
-  print (qsort_uniq [2,2, 3,1,1])

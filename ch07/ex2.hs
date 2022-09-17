@@ -46,12 +46,11 @@ takeWhile''' p =
     []
 
 -- d. dropWhile
-
 dropWhile' :: (a -> Bool) -> [a] -> [a]
 dropWhile' p =
   foldl
     (\xs x ->
-      if (p x) && (length xs == 0)
+       if p x
          then []
          else xs ++ [x])
     []
